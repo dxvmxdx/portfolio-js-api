@@ -1,18 +1,31 @@
 const searchForm = document.querySelector('.search');
+const searchInput = document.querySelector('.search__input');
 const ul = document.querySelector('.lists');
 const message = document.querySelector('.message');
 const spinner = document.querySelector('.spinner');
 searchForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   message.classList.remove('show');
+
+  const searchName = searchInput.value;
+  if (!searchName) return;
+
   spinner.classList.add('show');
-  const books = await searchBooks();
+  const books = await searchBooks(searchName);
   spinner.classList.remove('show');
+
   showResults(books);
 });
 
-async function searchBooks() {
-  const { data } = await axios.get('/data/books.json');
+async function searchBooks(searchName) {
+  const { data } = await axios.get('https://dapi.kakao.com/v3/search/book', {
+    headers: {
+      Authorization: `KakaoAK ${import.meta.env.VITE_KAKAO_REST_API_KEY}`,
+    },
+    params: {
+      query: searchName,
+    },
+  });
   return data ? data.documents : [];
 }
 
