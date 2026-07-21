@@ -63,3 +63,53 @@ header {
   font-size: 1.2rem;
   color: var(--color-text);
 }
+
+/* Main */
+.message {
+  padding: 1.2rem;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.lists {
+  width: 600px;
+  margin: 0 auto;
+  background-color: var(--color-secondary);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px dashed var(--color-text);
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.item__thumbnail {
+  width: 88px;
+  height: 124px;
+  border-radius: 4px;
+}
+
+.item__contents {
+  width: 100%;
+  color: var(--color-text);
+}
+
+.item__contents > p {
+  margin: 0.5rem;
+}
+
+.item__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.item__authors,
+.item__datetime {
+  font-size: 0.9rem;
+}
