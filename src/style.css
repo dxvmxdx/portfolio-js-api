@@ -1,1 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css');
 @import url('./reset.css');
+
+:root {
+  --color-primary: #03166c;
+  --color-secondary: #2b2e33;
+  --color-text: var(--color-white);
+
+  --color-black: #191a1d;
+  --color-white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-black);
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+input {
+  border: 0;
+  outline: 0;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  outline: 0;
+  cursor: pointer;
+}
