@@ -31,3 +31,35 @@ button {
   outline: 0;
   cursor: pointer;
 }
+
+/* Header */
+header {
+  margin: 7rem 0 3rem;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search__input {
+  width: 600px;
+  height: 4rem;
+  padding: 0.8rem 1.8rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  background-color: var(--color-secondary);
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+
+.search__button {
+  width: 4rem;
+  height: 4rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  background-color: var(--color-secondary);
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
