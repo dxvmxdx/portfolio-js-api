@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/images/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>js-api</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.18.1/dist/axios.min.js"></script>
     <link rel="stylesheet" href="/src/style.css" />
     <script type="module" src="/src/main.js" defer></script>
   </head>
@@ -21,23 +22,10 @@
         </button>
       </form>
     </header>
-    <main>
-      <!-- <p class="message">검색 결과가 없습니다.</p> -->
-      <ul class="lists">
-        <li class="item">
-          <img
-            class="item__thumbnail"
-            src="https://placehold.co/88x124"
-            alt="thumbnail"
-          />
-          <div class="item__contents">
-            <p class="item__title">소년이 온다</p>
-            <p class="item__authors">한강</p>
-            <p class="item__datetime">2014.05.19</p>
-            <p class="item__price">15,000원</p>
-          </div>
-        </li>
-      </ul>
+    <main class="section">
+      <i class="spinner fa-solid fa-spinner fa-spin"></i>
+      <p class="message">검색 결과가 없습니다.</p>
+      <ul class="lists"></ul>
     </main>
   </body>
 </html>
