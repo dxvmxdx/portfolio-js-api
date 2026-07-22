@@ -1,0 +1,11 @@
+(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();var e=document.querySelector(`.search`),t=document.querySelector(`.search__input`),n=document.querySelector(`.lists`),r=document.querySelector(`.message`),i=document.querySelector(`.spinner`);e.addEventListener(`submit`,async e=>{e.preventDefault(),r.classList.remove(`show`);let n=t.value;if(!n)return;i.classList.add(`show`);let s=await a(n);i.classList.remove(`show`),o(s)});async function a(e){let{data:t}=await axios.get(`https://dapi.kakao.com/v3/search/book`,{headers:{Authorization:`KakaoAK 3357aab497957a3b7ed91ebe0527758b`},params:{query:e}});return t?t.documents:[]}function o(e){if(!e||e.length===0){r.classList.add(`show`);return}n.innerHTML=``,e.forEach(e=>{let t=s(e);n.append(t)})}function s({thumbnail:e,title:t,authors:n,datetime:r,price:i}){let a=document.createElement(`li`);return a.classList.add(`item`),a.innerHTML=`<img
+            class="item__thumbnail"
+            src="${e}"
+            alt="thumbnail"
+          />
+          <div class="item__contents">
+            <p class="item__title">${t}</p>
+            <p class="item__authors">${n.join(`, `)}</p>
+            <p class="item__datetime">${c(r)}</p>
+            <p class="item__price">${i.toLocaleString(`ko-KR`)}원</p>
+          </div>`,a}function c(e){let t=new Date(e);return`${t.getFullYear()}. ${t.getMonth()}. ${t.getDate()}`}
